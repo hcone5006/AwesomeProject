@@ -1,51 +1,18 @@
 import React, { Component } from 'react';
 import { 
-  AppRegistry, 
   Text, 
   View, 
   Image,
-  StyleSheet
+  StyleSheet,
  } from 'react-native';
 
- import {TestComponent} from '@dan-akl/patterns';
+ // import { MonoText } from '../components/StyledText';
 
- class Blink extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isShowingText: true };
+ import PizzaTranslator from './PizzaTranslator';
+ import Greeting from './Greeting';
+ import ButtonBasics from './ButtonBasics';
+ import Blink from './Blink';
 
-    // Toggle the state every second
-    setInterval(() => (
-      this.setState(previousState => (
-        { isShowingText: !previousState.isShowingText }
-      ))
-    ), 2000);
-  }
-
-  render() {
-    if (!this.state.isShowingText) {
-      return null;
-    }
-
-    return (
-      // <Text style={styles.textbasestyle}>
-        <Text style={styles.blinktext}>{this.props.text}</Text>
-      // </Text>
-    );
-  }
-}
-
-class Greeting extends Component {
-  render() {
-    return (
-      <View style={{alignItems: 'center'}}>
-        {/* <Text style={styles.textbasestyle}>         */}
-          <Text style={styles.bodytext}>Hello {this.props.name}</Text>
-        {/* </Text> */}
-      </View>
-    )
-  }
-}
 
 export default class BlinkApp extends Component {
   render() {
@@ -58,15 +25,19 @@ export default class BlinkApp extends Component {
 
         <Image source={pic} style={styles.imgstyle}/>
 
+        <PizzaTranslator />
+
+        <ButtonBasics />
+
         <Greeting name="Rue" />
         <Greeting name="Dharini" />
         <Greeting name="René" />
 
-        <Blink text='I love to blink' />
+        <Blink text='Change is inevitable' />
 
-        <Text style={styles.textbasestyle}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit nulla erat, eu molestie lacus volutpat sit amet. Mauris convallis faucibus dapibus. Sed et tortor vitae neque vestibulum imperdiet at in magna. Proin ullamcorper, quam tincidunt maximus tristique, tellus tortor tempor erat, vitae lacini       
-        </Text>
+        {/* <Text style={styles.textbasestyle}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit nulla erat, eu molestie lacus volutpat sit amet. Mauris convallis faucibus dapibus. Sed et tortor vitae neque vestibulum imperdiet at in magna.       
+        </Text> */}
 
         <View style={{width: '100%', flex: 3, alignItems: "left"}}>
           <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
@@ -75,39 +46,10 @@ export default class BlinkApp extends Component {
         </View>
 
       </View>
-      
-      // <View style={{
-      //   flex: 1,
-      //   flexDirection: 'column',
-      //   justifyContent: 'center',
-      //   alignItems: 'stretch',
-      // }}>
-      //   <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
-      //   <View style={{height: 50, backgroundColor: 'skyblue'}} />
-      //   <View style={{height: 100, backgroundColor: 'steelblue'}} />
-      // </View>
+
     );
   }
 }
-
-
-// export default class LotsOfGreetings extends Component {
-//   render() {
-//     let pic = {
-//       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-//     };
-
-//     return (
-//       <View style={styles.appbackground}>
-//         <Image source={pic} style={{width: 193, height: 110, marginBottom: 16}}/>
-
-//         <Greeting name="Rue" />
-//         <Greeting name="Dharini" />
-//         <Greeting name="René" />
-//       </View>
-//     )
-//   }
-// }
 
 
 const styles = StyleSheet.create({
@@ -142,18 +84,28 @@ const styles = StyleSheet.create({
   bodytext: {
     color: 'hsla(328, 100%, 100%, 0.8)',
   },
-  blinktext: {
-    fontFamily: 'Cochin',
-    color: 'hsla(328, 100%, 100%, 0.5)',
-    fontSize: 40,
-    borderStyle: 'dotted',
-    borderColor: 'hsla(328, 100%, 100%, 0.5)',
-    borderWidth: 1,
-    padding: 10,
-    marginTop: 16,
-    top: 40,
-    position: 'absolute'
-  }
+  // button: {
+  //   marginBottom: 30,
+  //   width: 260,
+  //   alignItems: 'center',
+  //   backgroundColor: '#2196F3'
+  // },
+  // buttonText: {
+  //   padding: 20,
+  //   color: 'white'
+  // }
+  // blinktext: {
+  //   fontFamily: 'Cochin',
+  //   color: 'hsla(328, 100%, 100%, 0.5)',
+  //   fontSize: 40,
+  //   borderStyle: 'dotted',
+  //   borderColor: 'hsla(328, 100%, 100%, 0.5)',
+  //   borderWidth: 1,
+  //   padding: 10,
+  //   marginTop: 16,
+  //   top: 40,
+  //   position: 'absolute'
+  // }
 });
 
 // import React from 'react';
