@@ -4,7 +4,8 @@ import {
   Text, 
   TextInput, 
   View,
-  StyleSheet
+  StyleSheet,
+  // Label
  } from 'react-native';
 
 export default class PizzaTranslator extends Component {
@@ -16,6 +17,7 @@ export default class PizzaTranslator extends Component {
   render() {
     return (
       <View style={{padding: 10}}>
+        <Text style={styles.label}>The pizza translator:</Text>
         <TextInput
           style={styles.textInput}
           placeholder="Type here to translate!"
@@ -39,6 +41,11 @@ const styles = StyleSheet.create({
     paddingRight: 8,
     paddingLeft: 8,
     color: 'hsla(328, 100%, 22%, 0.59)',
+  },
+  label: {
+    fontSize: 16,
+    marginBottom: 4,
+    color: 'hsla(328, 100%, 100%, 0.8)',
   }
 });
 
