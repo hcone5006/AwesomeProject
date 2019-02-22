@@ -4,6 +4,7 @@ import {
   View, 
   Image,
   StyleSheet,
+  ScrollView
  } from 'react-native';
 
  // import { MonoText } from '../components/StyledText';
@@ -12,6 +13,7 @@ import {
  import Greeting from './Greeting';
  import ButtonBasics from './ButtonBasics';
  import Blink from './Blink';
+import { blue } from 'ansi-colors';
 
 
 export default class BlinkApp extends Component {
@@ -21,32 +23,43 @@ export default class BlinkApp extends Component {
     };
 
     return (
-      <View style={styles.appbackground}>
+      <ScrollView style={{backgroundColor: 'hsla(328, 100%, 22%, 0.59)'}}>
 
-        <Image source={pic} style={styles.imgstyle}/>
+        <View style={styles.appbackground}>
 
-        <PizzaTranslator />
+          <Image source={pic} style={styles.imgstyle}/>
 
-        <ButtonBasics />
+          <PizzaTranslator />
 
-        <Greeting name="Rue" />
-        <Greeting name="Dharini" />
-        <Greeting name="René" />
+          <ButtonBasics />
 
-        <Blink text='Change is inevitable' />
+          <Greeting name="Rue" />
+          <Greeting name="Dharini" />
+          <Greeting name="René" />
 
-        {/* <Text style={styles.textbasestyle}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit nulla erat, eu molestie lacus volutpat sit amet. Mauris convallis faucibus dapibus. Sed et tortor vitae neque vestibulum imperdiet at in magna.       
-        </Text> */}
+          <Blink text='Change is inevitable' />
 
-        <View style={{width: '100%', flex: 3, alignItems: "left"}}>
-          <View style={{width: 50, height: 50, backgroundColor: '#D7EBBA'}} />
-          <View style={{width: 100, height: 100, backgroundColor: '#FEFFBE'}} />
-          <View style={{width: 150, height: 150, backgroundColor: '#EBD494'}} />
+          {/* <Text style={styles.textbasestyle}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit nulla erat, eu molestie lacus volutpat sit amet. Mauris convallis faucibus dapibus. Sed et tortor vitae neque vestibulum imperdiet at in magna.       
+          </Text> */}
+
+          <View style={{width: '100%', flex: 3, alignItems: "left"}}>
+            <View style={{width: 50, height: 50, backgroundColor: '#D7EBBA'}} />
+            <View style={{width: 100, height: 100, backgroundColor: '#FEFFBE'}} />
+            <View style={{width: 150, height: 150, backgroundColor: '#EBD494'}} />
+          </View>
+          
+          <View style={{width: '100%', flex: 3, alignItems: "left"}}>
+            <View style={{width: 50, height: 50, backgroundColor: '#D7EBBA'}} />
+            <View style={{width: 100, height: 100, backgroundColor: '#FEFFBE'}} />
+            <View style={{width: 150, height: 150, backgroundColor: '#EBD494'}} />
+          </View>
+
         </View>
 
-      </View>
-
+        <Text style={styles.footerText}>~~~~You've made it to the bottom!~~~~</Text>
+      
+      </ScrollView>
     );
   }
 }
@@ -55,17 +68,19 @@ export default class BlinkApp extends Component {
 const styles = StyleSheet.create({
   appbackground: {
     flex: 1,
-    backgroundColor: 'hsla(328, 100%, 22%, 0.59)',
+    // backgroundColor: 'hsla(328, 100%, 22%, 0.59)',
     alignItems: 'center'
   },
-  textbasestyle: {
+  footerText: {
     // fontFamily: 'Cochin',
     fontSize: 16,
-    marginTop: 16,
-    marginBottom: 20,
-    marginLeft: 16,
-    marginRight: 16,
+    paddingTop: 16,
+    paddingBottom: 20,
+    paddingLeft: 16,
+    paddingRight: 16,
     color: 'hsla(328, 100%, 100%, 0.8)',
+    textAlign: 'center'
+    // backgroundColor: 'hsla(328, 100%, 22%, 0.3)',
   },
   imgstyle: {
     width: '100%', 
