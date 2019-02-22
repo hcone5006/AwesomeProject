@@ -35,11 +35,11 @@ const styles = StyleSheet.create({
   blinktext: {
     fontFamily: 'Cochin',
     color: 'hsla(328, 100%, 100%, 0.5)',
-    color: 'hsla(189, 100%, 0%, 0.4)',
+    // color: 'hsla(189, 100%, 0%, 0.4)',
     fontSize: 40,
     borderStyle: 'dotted',
     borderColor: 'hsla(328, 100%, 100%, 0.5)',
-    borderColor: 'hsla(189, 100%, 0%, 0.4)',
+    // borderColor: 'hsla(189, 100%, 0%, 0.4)',
     borderWidth: 1,
     padding: 10,
     marginTop: 16,

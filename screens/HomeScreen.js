@@ -40,9 +40,9 @@ export default class BlinkApp extends Component {
         </Text> */}
 
         <View style={{width: '100%', flex: 3, alignItems: "left"}}>
-          <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
-          <View style={{width: 100, height: 100, backgroundColor: 'skyblue'}} />
-          <View style={{width: 150, height: 150, backgroundColor: 'steelblue'}} />
+          <View style={{width: 50, height: 50, backgroundColor: '#D7EBBA'}} />
+          <View style={{width: 100, height: 100, backgroundColor: '#FEFFBE'}} />
+          <View style={{width: 150, height: 150, backgroundColor: '#EBD494'}} />
         </View>
 
       </View>
@@ -53,14 +53,7 @@ export default class BlinkApp extends Component {
 
 
 const styles = StyleSheet.create({
-  // bigblue: {
-  //   color: 'blue',
-  //   fontWeight: 'bold',
-  //   fontSize: 30,
-  // },
   appbackground: {
-    // color: 'red',
-    // height: '100%',
     flex: 1,
     backgroundColor: 'hsla(328, 100%, 22%, 0.59)',
     alignItems: 'center'
@@ -75,7 +68,6 @@ const styles = StyleSheet.create({
     color: 'hsla(328, 100%, 100%, 0.8)',
   },
   imgstyle: {
-    // flexGrow: 1,
     width: '100%', 
     height: 180, 
     marginBottom: 16,
@@ -83,29 +75,7 @@ const styles = StyleSheet.create({
   },
   bodytext: {
     color: 'hsla(328, 100%, 100%, 0.8)',
-  },
-  // button: {
-  //   marginBottom: 30,
-  //   width: 260,
-  //   alignItems: 'center',
-  //   backgroundColor: '#2196F3'
-  // },
-  // buttonText: {
-  //   padding: 20,
-  //   color: 'white'
-  // }
-  // blinktext: {
-  //   fontFamily: 'Cochin',
-  //   color: 'hsla(328, 100%, 100%, 0.5)',
-  //   fontSize: 40,
-  //   borderStyle: 'dotted',
-  //   borderColor: 'hsla(328, 100%, 100%, 0.5)',
-  //   borderWidth: 1,
-  //   padding: 10,
-  //   marginTop: 16,
-  //   top: 40,
-  //   position: 'absolute'
-  // }
+  }
 });
 
 // import React from 'react';
