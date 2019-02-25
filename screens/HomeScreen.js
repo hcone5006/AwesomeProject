@@ -18,6 +18,7 @@ import {
  import Blink from './Blink';
  import FetchInfo from './FetchInfo';
  import PickerComponent from './PickerComponent';
+ import SliderComponent from './SliderComponent';
 // import { blue } from 'ansi-colors';
 
 
@@ -156,6 +157,16 @@ export default class BlinkApp extends Component {
           dataJSON='https://facebook.github.io/react-native/movies.json'
         />
 
+        <View
+          style={{
+            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
+            borderBottomWidth: 1,
+            marginTop: 16,
+            marginLeft: 16,
+            marginRight: 16
+          }}
+        />
+
         <PickerComponent
           // selectedValue={this.state.language}
           language={this.state.language} 
@@ -163,6 +174,18 @@ export default class BlinkApp extends Component {
           languages={languages}
         />
 
+        <View
+          style={{
+            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
+            borderBottomWidth: 1,
+            marginTop: 16,
+            marginLeft: 16,
+            marginRight: 16
+          }}
+        />
+
+        <SliderComponent />
+        
         <Text style={styles.footerText}>~~~~You've made it to the bottom!~~~~</Text>
       
       </ScrollView>
