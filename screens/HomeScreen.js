@@ -6,7 +6,8 @@ import {
   StyleSheet,
   ScrollView,
   FlatList,
-  SectionList
+  SectionList,
+  Picker
  } from 'react-native';
 
  // import { MonoText } from '../components/StyledText';
@@ -16,14 +17,62 @@ import {
  import ButtonBasics from './ButtonBasics';
  import Blink from './Blink';
  import FetchInfo from './FetchInfo';
-import { blue } from 'ansi-colors';
+ import PickerComponent from './PickerComponent';
+// import { blue } from 'ansi-colors';
 
 
 export default class BlinkApp extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = { 
+      language: ''
+    }
+  }
+
+  // state = {user: ''}
+
+  updateLanguage = (language) => {
+    this.setState({ language: language });
+  }
+
+  // updateLanguage = (language) => {
+  //   this.setState({ language: language })
+  // }
+
+
   render() {
     let pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Nine_steps_stair_in_Lysekil_-_bw.jpg'
     };
+
+    var languages = [
+      { 
+        'id': 'computer_language_1',
+        'label': 'Java',
+        'value': 'java'
+      },
+      {
+        'id': 'computer_language_2',
+        'label': 'JavaScript',
+        'value': 'js'
+      },
+      {
+        'id': 'computer_language_2',
+        'label': 'C#',
+        'value': 'c#'
+      },
+      {              
+        'id': 'computer_language_3',
+        'label': 'Python',
+        'value': 'python'
+      },
+      {
+        'id': 'computer_language_4',
+        'label': 'PHP',
+        'value': 'php'
+      }
+    ]
 
     return (
       <ScrollView style={{backgroundColor: 'hsla(328, 100%, 22%, 0.59)'}}>
@@ -35,7 +84,6 @@ export default class BlinkApp extends Component {
 
             <Blink text='Change is inevitable' />
           </View>
-
 
           <PizzaTranslator />
 
@@ -106,6 +154,13 @@ export default class BlinkApp extends Component {
 
         <FetchInfo 
           dataJSON='https://facebook.github.io/react-native/movies.json'
+        />
+
+        <PickerComponent
+          // selectedValue={this.state.language}
+          language={this.state.language} 
+          updateLanguage={this.updateLanguage}
+          languages={languages}
         />
 
         <Text style={styles.footerText}>~~~~You've made it to the bottom!~~~~</Text>
