@@ -33,7 +33,8 @@ export default class SliderComponent extends Component {
           maximumValue={100}
           onValueChange={this.change.bind(this)}
           value={value}
-          color={'hsla(173, 38%, 71%, 1)'}
+          minimumTrackTintColor={'hsla(173, 38%, 71%, 1)'}
+          maximumTrackTintColor={'hsla(328, 100%, 100%, 0.9)'}
         />
       </View>
     );

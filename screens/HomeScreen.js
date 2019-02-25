@@ -7,7 +7,9 @@ import {
   ScrollView,
   FlatList,
   SectionList,
-  Picker
+  Picker,
+  Switch, 
+  DatePickerIOS
  } from 'react-native';
 
  // import { MonoText } from '../components/StyledText';
@@ -27,8 +29,12 @@ export default class BlinkApp extends Component {
     super(props);
 
     this.state = { 
-      language: ''
+      language: '',
+      switchValue: false,
+      chosenDate: new Date()
     }
+
+    this.setDate = this.setDate.bind(this);
   }
 
   // state = {user: ''}
@@ -37,10 +43,16 @@ export default class BlinkApp extends Component {
     this.setState({ language: language });
   }
 
-  // updateLanguage = (language) => {
-  //   this.setState({ language: language })
-  // }
-
+  toggleSwitch = (value) => {
+    //onValueChange of the switch this function will be called
+    this.setState({switchValue: value})
+    //state changes according to switch
+    //which will result in re-render the text
+  }
+  
+  setDate(newDate) {
+    this.setState({chosenDate: newDate});
+  }
 
   render() {
     let pic = {
@@ -185,9 +197,87 @@ export default class BlinkApp extends Component {
         />
 
         <SliderComponent />
-        
+
+        <View
+          style={{
+            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
+            borderBottomWidth: 1,
+            marginTop: 16,
+            marginLeft: 16,
+            marginRight: 16
+          }}
+        />
+
+        <View style={{marginLeft: 16, marginRight: 16}}>
+          <Text 
+          style={{
+            color: 'hsla(328, 100%, 100%, 0.8)', 
+            fontSize: 18,
+            marginTop: 20, 
+            paddingBottom: 8, 
+            // fontWeight: 'bold'
+          }}>
+             Would you like receive our newsletter?
+          </Text>
+
+          <View style={styles.switchContainer}>
+            <Switch 
+              onValueChange={this.toggleSwitch}
+              value={this.state.switchValue}
+              trackColor={'#D7EBBA'}
+              trackColor={{true: "#D7EBBA", false: null}}
+              thumbColor={'hsla(173, 38%, 71%, 1)'}
+              style={{width: 70}}
+            />
+            {this.state.switchValue == true && 
+              <Text style={styles.switchText}>Yes, please.</Text>
+            }
+            {this.state.switchValue == false && 
+              <Text style={styles.switchText}>No, thank you.</Text>
+            }
+          </View>
+        </View>
+
+        <View
+          style={{
+            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
+            borderBottomWidth: 1,
+            marginTop: 16,
+            marginLeft: 16,
+            marginRight: 16
+          }}
+        />
+
+        <View style={{marginLeft: 16, marginRight: 16, marginBottom: 16}}>
+          <Text 
+          style={{
+            color: 'hsla(328, 100%, 100%, 0.8)', 
+            fontSize: 18,
+            marginTop: 30, 
+            // paddingBottom: 4, 
+            // fontWeight: 'bold'
+          }}>
+             Select a date:
+          </Text>
+          <DatePickerIOS
+            date={this.state.chosenDate}
+            onDateChange={this.setDate}
+            style={styles.datePicker}
+          />
+        </View>
+
+        <View
+          style={{
+            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
+            borderBottomWidth: 1,
+            marginTop: 16,
+            marginLeft: 16,
+            marginRight: 16
+          }}
+        />
+
         <Text style={styles.footerText}>~~~~You've made it to the bottom!~~~~</Text>
-      
+
       </ScrollView>
     );
   }
@@ -229,7 +319,6 @@ const styles = StyleSheet.create({
   },
   bodytext: {
     color: 'hsla(328, 100%, 100%, 0.8)',
-    // paddingTop: 16,
     paddingBottom: 20,
     paddingLeft: 16,
     paddingRight: 16,
@@ -249,6 +338,24 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'hsla(328, 100%, 22%, 0.9)',
     backgroundColor: '#D7EBBA',
+  },
+  switchContainer: {
+    flex: 1,
+    flexDirection: 'row', 
+    justifyContent: 'flex-start',
+  },
+  switchText: {
+    paddingLeft: 4, 
+    color: 'white',
+    width: 100,
+    lineHeight: 30,
+  },
+  datePicker: {
+    marginTop: 16,
+    flex: 1, 
+    justifyContent: 'center',
+    backgroundColor: 'hsla(328, 100%, 100%, 0.8)',
+    color: 'hsla(328, 100%, 22%, 0.9)'
   }
 });
  

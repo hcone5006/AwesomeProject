@@ -16,7 +16,6 @@ export default class PickerComponent extends Component {
         <Picker
           selectedValue={this.props.language} 
           onValueChange={this.props.updateLanguage}
-
           style={{flex: 1 }}
           itemStyle={{color: 'hsla(328, 100%, 22%, 0.9)', backgroundColor: 'hsla(328, 100%, 100%, 0.8)'}}
           // onValueChange={(itemValue, itemIndex) =>
