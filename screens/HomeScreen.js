@@ -104,7 +104,9 @@ export default class BlinkApp extends Component {
           keyExtractor={(item, index) => index}
         />
 
-        <FetchInfo />
+        <FetchInfo 
+          dataJSON='https://facebook.github.io/react-native/movies.json'
+        />
 
         <Text style={styles.footerText}>~~~~You've made it to the bottom!~~~~</Text>
       

@@ -17,7 +17,7 @@ export default class FetchInfo extends React.Component {
   }
 
   componentDidMount(){
-    return fetch('https://facebook.github.io/react-native/movies.json')
+    return fetch(this.props.dataJSON)
     .then((response) => response.json())
     .then((responseJson) => {
 
