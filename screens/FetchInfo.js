@@ -47,17 +47,8 @@ export default class FetchInfo extends React.Component {
 
     return(
       <View style={{flex: 1, paddingTop: 20}}>
-        <View
-          style={{
-            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
-            borderBottomWidth: 1,
-            marginTop: 16,
-            marginLeft: 16,
-            marginRight: 16
-          }}
-        />
-        <Text style={{color: 'hsla(328, 100%, 100%, 0.8)', fontSize: 18, marginTop: 20, paddingLeft: 16,
-    paddingRight: 16, paddingBottom: 16, fontWeight: 'bold'}}>Movies:</Text>
+        <View style={styles.hr} />
+        <Text style={styles.titleText}>Movies:</Text>
         <FlatList
           data={this.state.dataSource}
           renderItem={({item}) => <Text style={styles.bodytext}>ID# {item.id}: {item.title}, {item.releaseYear}</Text>}
@@ -71,9 +62,22 @@ export default class FetchInfo extends React.Component {
 const styles = StyleSheet.create({
   bodytext: {
     color: 'hsla(328, 100%, 100%, 0.8)',
-    // paddingTop: 16,
     paddingBottom: 20,
     paddingLeft: 16,
     paddingRight: 16,
+  },
+  titleText: {
+    fontSize: 22, 
+    color: 'hsla(328, 100%, 100%, 0.8)', 
+    paddingRight: 16, 
+    paddingLeft: 16,
+    paddingBottom: 8,
+  },
+  hr: {
+    borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
+    borderBottomWidth: 1,
+    marginTop: 16,
+    marginLeft: 16,
+    marginRight: 16
   }
 })

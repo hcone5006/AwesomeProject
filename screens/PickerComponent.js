@@ -11,8 +11,7 @@ export default class PickerComponent extends Component {
   render() {
     return (
       <View>
-        <Text style={{color: 'hsla(328, 100%, 100%, 0.8)', fontSize: 16, marginTop: 20, paddingLeft: 16,
-      paddingRight: 16, paddingBottom: 16, fontWeight: 'bold'}}>Select a language:</Text>
+        <Text style={styles.titleText}>Select a language:</Text>
         <Picker
           selectedValue={this.props.language} 
           onValueChange={this.props.updateLanguage}
@@ -36,21 +35,12 @@ export default class PickerComponent extends Component {
 }
 
 const styles = StyleSheet.create({
-  // button: {
-  //   marginBottom: 30,
-  //   width: 260,
-  //   alignItems: 'center',
-  //   backgroundColor: 'hsla(173, 38%, 71%, 1)',
-  //   borderColor: 'hsla(173, 38%, 71%, 1)',
-  //   borderWidth: 1,
-  //   borderStyle: 'solid',
-  //   borderRadius: 3,
-  // },
-  // buttonText: {
-  //   padding: 20,
-  //   color: 'hsla(328, 100%, 22%, 0.59)',
-  //   fontSize: 18,
-  //   // color: 'hsla(328, 100%, 100%, 0.9)',
-  // }
+  titleText: {
+    fontSize: 22, 
+    color: 'hsla(328, 100%, 100%, 0.8)', 
+    paddingRight: 16, 
+    paddingLeft: 16,
+    paddingBottom: 8,
+  },
 });
 

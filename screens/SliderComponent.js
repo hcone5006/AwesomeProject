@@ -54,22 +54,6 @@ const styles = StyleSheet.create({
     fontSize: 50,
     textAlign: 'center',
     color: 'hsla(328, 100%, 100%, 0.8)',
-  }
-  // button: {
-  //   marginBottom: 30,
-  //   width: 260,
-  //   alignItems: 'center',
-  //   backgroundColor: 'hsla(173, 38%, 71%, 1)',
-  //   borderColor: 'hsla(173, 38%, 71%, 1)',
-  //   borderWidth: 1,
-  //   borderStyle: 'solid',
-  //   borderRadius: 3,
-  // },
-  // buttonText: {
-  //   padding: 20,
-  //   color: 'hsla(328, 100%, 22%, 0.59)',
-  //   fontSize: 18,
-  //   // color: 'hsla(328, 100%, 100%, 0.9)',
-  // }
+  } 
 });
 

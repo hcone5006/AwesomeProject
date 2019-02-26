@@ -127,8 +127,7 @@ export default class BlinkApp extends Component {
 
         </View>
         
-        <Text style={{color: 'hsla(328, 100%, 100%, 0.8)', fontSize: 18, marginTop: 20, paddingLeft: 16,
-    paddingRight: 16, paddingBottom: 16, fontWeight: 'bold'}}>Names:</Text>
+        <Text style={styles.titleText}>Names:</Text>
         <FlatList
           data={[
             {key: 'Devin'},
@@ -143,18 +142,9 @@ export default class BlinkApp extends Component {
           renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
         />
 
-        <View
-          style={{
-            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
-            borderBottomWidth: 1,
-            marginTop: 16,
-            marginLeft: 16,
-            marginRight: 16
-          }}
-        />
+        <View style={styles.hr} />
 
-        <Text style={{color: 'hsla(328, 100%, 100%, 0.8)', fontSize: 18, marginTop: 20, paddingLeft: 16,
-    paddingRight: 16, paddingBottom: 16, fontWeight: 'bold'}}>My section list:</Text>
+        <Text style={styles.titleText}>My section list:</Text>
         <SectionList
           sections={[
             {title: 'D', data: ['Devin']},
@@ -169,15 +159,7 @@ export default class BlinkApp extends Component {
           dataJSON='https://facebook.github.io/react-native/movies.json'
         />
 
-        <View
-          style={{
-            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
-            borderBottomWidth: 1,
-            marginTop: 16,
-            marginLeft: 16,
-            marginRight: 16
-          }}
-        />
+        <View style={styles.hr} />
 
         <PickerComponent
           // selectedValue={this.state.language}
@@ -186,40 +168,15 @@ export default class BlinkApp extends Component {
           languages={languages}
         />
 
-        <View
-          style={{
-            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
-            borderBottomWidth: 1,
-            marginTop: 16,
-            marginLeft: 16,
-            marginRight: 16
-          }}
-        />
+        <View style={styles.hr} />
 
         <SliderComponent />
 
-        <View
-          style={{
-            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
-            borderBottomWidth: 1,
-            marginTop: 16,
-            marginLeft: 16,
-            marginRight: 16
-          }}
-        />
+        <View style={styles.hr} />
+
+          <Text style={styles.titleText}>Would you like receive our newsletter?</Text>
 
         <View style={{marginLeft: 16, marginRight: 16}}>
-          <Text 
-          style={{
-            color: 'hsla(328, 100%, 100%, 0.8)', 
-            fontSize: 18,
-            marginTop: 20, 
-            paddingBottom: 8, 
-            // fontWeight: 'bold'
-          }}>
-             Would you like receive our newsletter?
-          </Text>
-
           <View style={styles.switchContainer}>
             <Switch 
               onValueChange={this.toggleSwitch}
@@ -238,27 +195,10 @@ export default class BlinkApp extends Component {
           </View>
         </View>
 
-        <View
-          style={{
-            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
-            borderBottomWidth: 1,
-            marginTop: 16,
-            marginLeft: 16,
-            marginRight: 16
-          }}
-        />
+        <View style={styles.hr} />
 
         <View style={{marginLeft: 16, marginRight: 16, marginBottom: 16}}>
-          <Text 
-          style={{
-            color: 'hsla(328, 100%, 100%, 0.8)', 
-            fontSize: 18,
-            marginTop: 30, 
-            // paddingBottom: 4, 
-            // fontWeight: 'bold'
-          }}>
-             Select a date:
-          </Text>
+          <Text style={styles.titleText}>Select a date:</Text>
           <DatePickerIOS
             date={this.state.chosenDate}
             onDateChange={this.setDate}
@@ -266,15 +206,7 @@ export default class BlinkApp extends Component {
           />
         </View>
 
-        <View
-          style={{
-            borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
-            borderBottomWidth: 1,
-            marginTop: 16,
-            marginLeft: 16,
-            marginRight: 16
-          }}
-        />
+        <View style={styles.hr} />
 
         <Text style={styles.footerText}>~~~~You've made it to the bottom!~~~~</Text>
 
@@ -288,7 +220,6 @@ const styles = StyleSheet.create({
   appbackground: {
     flex: 1,
     // backgroundColor: 'hsla(328, 100%, 22%, 0.59)',
-    // alignItems: 'left'
   },
   alignCenter: {
     alignItems: 'center'
@@ -356,6 +287,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'hsla(328, 100%, 100%, 0.8)',
     color: 'hsla(328, 100%, 22%, 0.9)'
+  },
+  hr: {
+    borderBottomColor: 'hsla(328, 100%, 100%, 0.5)',
+    borderBottomWidth: 1,
+    marginTop: 16,
+    marginLeft: 16,
+    marginRight: 16
   }
 });
  
